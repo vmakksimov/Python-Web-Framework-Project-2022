@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div>
+
+<section>
+    <a class="button" href="{% url 'overview crypto' request.user.id %}">Crypto OverView</a>
+    <a class="button" href="{% url 'overview fiat' request.user.id %}">Fiat OverView</a>
+
+</section>
+</div>
+<div class="hero_area">
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+            Currency
+        </th>
+          <th>
+          Amount
+        </th>
+          <th>
+          Beneficiary name
+        </th>
+
+            <th>
+                Trade
+            </th>
+
+      </tr>
+
+    </thead>
+    <tfoot>
+      <tr>
+
+      </tr>
+    </tfoot>
+
+
+
+    <tbody>
+          {% for deposit in deposits %}
+      <tr>
+        <td data-title='Provider Name'>
+            1
+        </td>
+          <td data-title='Provider Name'>
+              {{ deposit.currency }}
+        </td>
+        <td data-title='E-mail'>
+            {% if not deposit.amount %}
+          {{ 0 }}
+            {% else %}
+            {{ deposit.amount }}
+            {% endif %}
+        </td>
+           <td data-title='Provider Name'>
+               {{ deposit.beneficiary_name }}
+        </td>
+
+        <td class='select'>
+            {% if deposit.amount %}
+          <a class='button' href='{% url 'fiat withdrawal custom' deposit.pk %}'>
+            Withdraw to your Bank Account
+          </a>
+            {% endif %}
+
+
+        </td>
+      </tr>
+
+     {% endfor %}
+
+
+    </tbody>
+  </table>
+
+</main>
+</div>
+
+{% endblock %}

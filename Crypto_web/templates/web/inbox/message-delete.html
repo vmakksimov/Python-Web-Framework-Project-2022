@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<section id="create-page" class="auth">
+    <div class="container">
+        <div class="hero_area">
+
+        <h1 class="">Are you sure you want to delete this message?</h1>
+
+        <!-- delete profile form -->
+        <form method='post' {% url 'message delete' request.user.id %}>
+            {% csrf_token %}
+            {{ form }}
+
+            <!-- confirm button -->
+            <input class="button" type="submit" value="Delete">
+        </form>
+        <!-- end delete profile form -->
+
+    </div>
+    </div>
+</section>
+
+{% endblock %}

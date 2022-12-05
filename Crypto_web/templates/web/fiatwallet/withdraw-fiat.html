@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <h1 class="text-center">Are you sure you want to withdraw everything?</h1>
+    <div class="hero_area">
+    <div class="row">
+
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form method="post" action="{% url 'fiat withdrawal' object.pk %}">
+                {% csrf_token %}
+                    {{ form }}
+                <!-- Form for Editing a Pet Info -->
+
+                <button class="btn btn-primary mt-2" type="submit">Withdraw</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}

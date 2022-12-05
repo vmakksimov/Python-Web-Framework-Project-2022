@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+     <section class="news_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+               <h1>The World’s Fastest Growing
+Crypto App</h1>
+
+            <h4>&#x2713; Buy crypto at true cost</h4>
+          <h3>&#x2713; Join other users buying and selling cryptocurrencies at true cost</h3>
+          <h4>&#x2713; Grow your assets safely.</h4>
+          <h5>&#x2713; SECURELY BUY, SELL, STORE, SEND and TRACK</h5>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- service section -->
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Our Services
+          </h2>
+          <p>
+            Check the open articles below
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/icons8-us-news-100.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                    News
+                </h5>
+                <p>
+                  Read all about the recent news in the crypto world.
+                </p>
+                <a href="{% url 'news' %}">
+                  Open
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/icons8-info-squared-100.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Help Center
+                </h5>
+                <p>
+                  Read about everything you don't know, so you can get a better understanding of the operations.
+                </p>
+
+                <a href="{% url 'articles' %}">
+
+                  Open
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/financial-growth-icon.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Dashboard
+                </h5>
+                <p>
+                  See the current marketplace.
+                </p>
+                <a href="{% url 'dashboard' %}">
+                  Open
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/icons8-contact-100.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Contact Us
+                </h5>
+                <p>
+                  Share your feedback with us or get in touch at any time in case you need anything.
+                </p>
+
+                <a href="{% url 'contact' %}">
+
+                  Open
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+     <section class="info_section ">
+
+    <div class="container">
+      <div class="info_top ">
+        <div class="row ">
+          <div class="col-md-7 col-lg-4">
+            <div class="info_detail">
+              <a href="{% url 'about' %}">
+                <h4>
+                  About Us
+                </h4>
+              </a>
+
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 col-xl-3 mx-auto">
+            <h4>
+              Contact us
+            </h4>
+
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +359 899006831
+                </span>
+
+          </div>
+            <div class="col-md-5 col-lg-4 col-xl-3 mx-auto">
+                <a href="{% url 'contact' %}">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : vmakksimov@gmail.com
+                </span>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

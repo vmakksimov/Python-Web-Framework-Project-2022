@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <div id="box">
+    <div class="container">
+    <div class="hero_area">
+
+    {% if not coins %}
+    <p class="no-articles">No coins yet.
+        If you want to buy a coin, click <a href="{% url 'create coin' %}" class="btn details-btn">here.</a></p>
+
+    {% else  %}
+    <!-- Display div "game" with information about every game (if any)-->
+    <section id="welcome-world">
+
+
+            {% for key, value in coins.items %}
+            <!-- first game-->
+            {# {% if forloop.counter|divisibleby:'3' %} #}
+            <div class="game">
+
+                <!-- game title -->
+                <h3>{{ key }}</h3>
+                <!-- game category-->
+                <h1>{{ value }}</h1>
+                <div class="data-buttons">
+                    <!-- game details button -->
+                    <a href="{% url 'overview crypto' request.user.id %}" class="btn details-btn">Navigate to Overview</a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </section>
+
+
+
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

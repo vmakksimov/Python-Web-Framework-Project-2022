@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+
+    <div id="box">
+
+    <div class="hero_area">
+    <!-- details section -->
+    <section id="game-details">
+        <h1>News Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+
+                <h1>{{ news.title }}</h1>
+
+
+
+
+                <p><span class="type">Date Created: {{ news.current_date }}</span></p>
+
+            </div>
+
+            {% if news.description %}
+            <p class="text">
+                {{ news.description}}
+            </p>
+        {% endif %}
+
+
+
+        </div>
+    </section>
+
+    </div>
+    </div>
+{% endblock %}

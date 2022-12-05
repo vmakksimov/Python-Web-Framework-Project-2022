@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="row justify-content-center">
+    <div class="hero_area">
+        <div class="d-flex">
+            <div class="d-inline p-2 w-50">
+
+                <img src="{{ profile.picture }}"
+                     class="w-50 rounded mx-auto d-block" alt="description">
+            </div>
+            <div class="d-inline p-2 w-50">
+                <div class="d-flex flex-column">
+                    <h5><u>Name:</u> {{ profile.first_name }} {{ profile.last_name }}</h5>
+                    <!-- If Date of Birth -->
+                    {% if profile.date_of_birth %}
+                    <h5><u>Birthdate:</u> {{ profile.date_of_birth }}</h5>
+                    {% endif %}
+                    <!-- If Email -->
+                    {% if profile.email %}
+                    <h5><u>Email:</u> {{ profile.email }}</h5>
+                    {% endif %}
+                    <!-- If Gender is Chosen -->
+                    {% if profile.gender %}
+                    <h5><u>Gender:</u> {{ profile.gender }}</h5>
+                    {% endif %}
+                    <!-- If Description -->
+                    {% if profile.description %}
+                    <h5><u>Description:</u> {{ profile.description}}</h5>
+                    {%  endif %}
+                </div>
+                <p class="mt-2">Total Coins: {{ total_coins }}</p>
+                <p class="mt-2">Fiat Balance: {{ fiat_balance }}</p>
+                <p class="mt-2">Crypto Balance: {{ crypto_balance }}</p>
+                 <p class="mt-2">Total Balance: {{ total_balance }}</p>
+
+            <div class="buttons">
+                    <a href="{% url 'profile edit' profile.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'delete profile page' profile.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            {% if is_owner %}
+                  <a href="{% url 'profile edit' profile.pk %}" class="btn btn-primary">Edit</a>
+                  <a href="{% url 'delete profile page' profile.pk %}" class="btn btn-danger">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

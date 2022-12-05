@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <div id="box">
+    <div class="container">
+    <div class="hero_area">
+
+    {% if not news %}
+    <p class="no-articles">No news yet.</p>
+    {% else %}
+        <section class="news_section layout_padding">
+     <div class="row">
+         {% for el in news %}
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/b1.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                  {{ el.title }}
+              </h5>
+                <p>
+
+                </p>
+              <div class="news_info">
+                <h6 class="news_date">
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{ el.current_date }}
+                </h6>
+                <h6 class="news_poster">
+                  <i class="fa fa-user" aria-hidden="true"></i> {{ el.author }}
+                </h6>
+              </div>
+                {% if request.user.is_superuser or request.user.is_staff %}
+                <a class="button" href="{% url 'update news' el.pk %}">
+                Edit
+              </a>
+                    <a class="button" href="{% url 'delete news' el.pk %}">
+                Delete
+              </a>
+                {% endif %}
+              <a href="{% url 'details news' el.pk %}">
+                Read More
+              </a>
+
+
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+
+      </div>
+
+        </section>
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+  <!-- about section -->
+
+  <section class="about_section about_section1 layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-lg-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/pandasecurity-crypto-gaming.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="game">
+            <div class="heading_container">
+              <h2>
+                Why It Matters?
+              </h2>
+            </div>
+            <p>
+              Powered by cryptocurrency, the future of the internet: Web3 will be more fair and equitable, owned by the builders, creators and users. You.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- about section -->
+
+  <section class="about_section about_section2 layout_padding-bottom">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="game">
+            <div class="heading_container">
+              <h2>
+                Be Independent
+              </h2>
+            </div>
+            <p>
+              We believe it is your basic right to control your money, data and identity.
+            </p>
+
+          </div>
+        </div>
+        <div class="col-lg-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/106962967-1634709558798-gettyimages-1235570383-porzycki-cryptocu210928_npbUe.jpeg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- info section -->
+    <section class="info_section ">
+
+    <div class="container">
+      <div class="info_top ">
+        <div class="row ">
+          <div class="col-md-7 col-lg-4">
+            <div class="info_detail">
+              <a href="{% url 'about' %}">
+                <h4>
+                  About Us
+                </h4>
+              </a>
+
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 col-xl-3 mx-auto">
+            <h4>
+              Contact us
+            </h4>
+
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +359 899006831
+                </span>
+
+          </div>
+            <div class="col-md-5 col-lg-4 col-xl-3 mx-auto">
+                <a href="{% url 'contact' %}">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : vmakksimov@gmail.com
+                </span>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+{% endblock %}

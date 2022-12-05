@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+
+    <div id="box">
+
+
+    <!-- details section -->
+    <section id="game-details">
+        <h1>Article Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                <!-- game image -->
+                <img class="game-img"
+                     src="{{ article.image }}"
+                     alt='game image'/>
+                <!-- title and rating -->
+                <h1>{{ article.title }}</h1>
+
+
+
+                <p><span class="type">Date Created: {{ article.date_created }}</span></p>
+
+            </div>
+            <!-- game summary (if any)-->
+            {% if article.description %}
+            <p class="text">
+                {{ article.description}}
+            </p>
+        {% endif %}
+
+            {% if request.user.is_superuser or request.user.is_staff  %}
+            <div class="buttons">
+                <a href="{% url 'update article' article.pk %}" class="button">Edit</a>
+                <a href="{% url 'delete article' article.pk %}" class="button">Delete</a>
+            </div>
+        {% endif %}
+        </div>
+    </section>
+
+
+    </div>
+{% endblock %}

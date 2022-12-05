@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div>
+<section>
+        <a class="button" href="{% url 'overview crypto' request.user.id %}">Crypto OverView</a>
+        <a class="button" href="{% url 'overview fiat' request.user.id %}">Fiat OverView</a>
+
+</section>
+</div>
+<div class="hero_area">
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Digital Asset
+        </th>
+          <th>
+          Quantity
+        </th>
+          <th>
+          Payment Method
+        </th>
+
+        <th>
+            Trade
+        </th>
+      </tr>
+
+    </thead>
+    <tfoot>
+      <tr>
+
+      </tr>
+    </tfoot>
+    <tbody>
+    {% for el in coins %}
+
+      <tr>
+        <td data-title='Provider Name'>
+            {{ forloop.counter }}
+        </td>
+          <td data-title='Provider Name'>
+              {{ el.type }}
+        </td>
+        <td data-title='E-mail'>
+          {{ el.quantity }}
+        </td>
+           <td data-title='Provider Name'>
+               {{ el.payment_method }}
+        </td>
+
+        <td class='select'>
+          <a class='button' href='{% url 'coin convert' el.id %}'>
+            Convert to Fiat
+          </a>
+            <a class='button' href='{% url 'update coin' el.id  %}'>
+            Withdrawal
+          </a>
+
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+
+</main>
+
+</div>
+
+{% endblock %}
