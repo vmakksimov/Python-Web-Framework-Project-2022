@@ -19,10 +19,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('Crypto_web.web.urls')),
-    path('accounts/', include('Crypto_web.accounts.urls')),
-    path('news/', include('Crypto_web.news.urls')),
-    path('article', include('Crypto_web.helparticle.urls')),
+                  path('admin/', admin.site.urls),
+                  path('', include('Crypto_web.web.urls')),
+                  path('accounts/', include('Crypto_web.accounts.urls')),
+                  path('news/', include('Crypto_web.news.urls')),
+                  path('article', include('Crypto_web.helparticle.urls')),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = 'Crypto_web.accounts.custom_errors_handling.handler404'
