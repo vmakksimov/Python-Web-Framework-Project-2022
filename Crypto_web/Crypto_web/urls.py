@@ -27,4 +27,8 @@ urlpatterns = [
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-handler404 = 'Crypto_web.accounts.custom_errors_handling.handler404'
+handler400 = 'Crypto_web.common.custom_errors_handling.handler400'
+handler404 = 'Crypto_web.common.custom_errors_handling.handler404'
+handler403 = 'Crypto_web.common.custom_errors_handling.handler403'
+handler500 = 'Crypto_web.common.custom_errors_handling.handler500'
+
