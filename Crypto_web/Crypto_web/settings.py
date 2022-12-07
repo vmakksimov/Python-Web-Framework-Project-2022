@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-tmc2xh=aecf83j2kf%8^hp2=qm7udh=p4*)1$$k6_9o013qa47
 DEBUG = False
 
 ALLOWED_HOSTS = [
-   # '127.0.0.1',
-   # 'python-framework-project-2022.herokuapp.com',
+    '127.0.0.1',
+    'python-framework-project-2022.herokuapp.com',
 ]
 
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
