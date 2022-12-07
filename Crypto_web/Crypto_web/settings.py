@@ -23,9 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tmc2xh=aecf83j2kf%8^hp2=qm7udh=p4*)1$$k6_9o013qa47'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+   # '127.0.0.1',
+   # 'python-framework-project-2022.herokuapp.com',
+]
 
 
 # Application definition
@@ -143,7 +146,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR_2, 'staticfiles'),
+    os.path.join(BASE_DIR_2, 'static'),
 )
 
 AUTH_USER_MODEL = 'accounts.CryptoUser'
