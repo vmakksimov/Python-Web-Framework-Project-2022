@@ -150,7 +150,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR_2, 'static'),
 )
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 AUTH_USER_MODEL = 'accounts.CryptoUser'
 
