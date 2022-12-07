@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath Crypto_web Crypto_web.wsgi
