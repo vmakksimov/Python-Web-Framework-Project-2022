@@ -92,10 +92,10 @@ WSGI_APPLICATION = 'Crypto_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crypto_db',
-        'USER': 'postgres',
-        'PASSWORD': 'viktor93',
-        'HOST': '127.0.0.1',
+        'NAME': 'd8607rrdab8rqq',
+        'USER': 'omnxgvgapbmrmm',
+        'PASSWORD': 'ff7a71d28a8879eadbff84cdc1a4f4907853f9b7d57ea1f79bdca9089bc371f6',
+        'HOST': 'ec2-52-48-159-67.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
