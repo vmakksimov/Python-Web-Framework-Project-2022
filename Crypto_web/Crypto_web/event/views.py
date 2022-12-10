@@ -27,7 +27,7 @@ class EventView(views.ListView):
 
 class EventDetailView(views.DetailView):
     model = CryptoEvent
-    template_name = 'events/details_article.html'
+    template_name = 'events/details_event.html'
     context_object_name = 'event'
 
     def get_queryset(self):
@@ -41,7 +41,7 @@ class EventDetailView(views.DetailView):
 class EventEditView(views.UpdateView):
     model = CryptoEvent
     form_class = UpdateEventForm
-    template_name = 'events/edit_article.html'
+    template_name = 'events/edit_event.html'
     context_object_name = 'event'
     success_url = reverse_lazy('index')
 
@@ -55,5 +55,5 @@ class EventEditView(views.UpdateView):
 class EventDeleteView(views.DeleteView):
     model = CryptoEvent
     form_class = DeleteEventForm
-    template_name = 'events/delete_article.html'
+    template_name = 'events/delete_event.html'
     success_url = reverse_lazy('dashboard')
