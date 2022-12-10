@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+
+    <div id="box">
+
+
+    <!-- details section -->
+    <section id="game-details">
+        <h1>Article Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                <!-- game image -->
+                <img class="game-img"
+                     src="{{ event.event_image }}"
+                     alt='game image'/>
+                <!-- title and rating -->
+                <h1>{{ event.title }}</h1>
+
+
+
+                <p><span class="type">Event Date: {{ event.event_date }}</span></p>
+
+            </div>
+            <!-- game summary (if any)-->
+            {% if event.description %}
+            <p class="text">
+                {{ event.description}}
+            </p>
+        {% endif %}
+
+            {% if request.user.is_superuser or request.user.is_staff  %}
+            <div class="buttons">
+                <a href="{% url 'update event' event.pk %}" class="button">Edit</a>
+                <a href="{% url 'delete event' event.pk %}" class="button">Delete</a>
+            </div>
+        {% endif %}
+        </div>
+    </section>
+
+
+    </div>
+{% endblock %}

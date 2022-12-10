@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <div id="box">
+    <div class="container">
+    <div class="hero_area">
+    {% if not events %}
+    <p class="no-articles">No events yet</p>
+
+    {% else  %}
+    <!-- Display div "game" with information about every game (if any)-->
+    <section id="welcome-world">
+
+
+            {% for event in events %}
+            <!-- first game-->
+            {# {% if forloop.counter|divisibleby:'3' %} #}
+
+            <div class="game">
+                <div class="image-wrap">
+                    <!-- game image -->
+                    <img src="{{ event.event_image }}"
+                         alt="UNO">
+                </div>
+                <!-- game title -->
+                <h3>{{ event.title }}</h3>
+                <!-- game category-->
+                <h1>{{ event.description }}</h1>
+                <div class="data-buttons">
+                    <!-- game details button -->
+                    <a href="{% url 'event details' event.pk %}" class="btn details-btn">Details</a>
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+    </section>
+
+
+
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

@@ -23,7 +23,8 @@ urlpatterns = [
                   path('', include('Crypto_web.web.urls')),
                   path('accounts/', include('Crypto_web.accounts.urls')),
                   path('news/', include('Crypto_web.news.urls')),
-                  path('article', include('Crypto_web.helparticle.urls')),
+                  path('article/', include('Crypto_web.helparticle.urls')),
+                  path('event/', include('Crypto_web.event.urls')),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<div id="box">
+<div class="hero_area">
+    <!-- edit game section -->
+    <section id="create-page" class="auth">
+        <!-- edit game form -->
+        <form method="post" action="{% url 'update event' object.pk %}">
+            <div class="container">
+                <!-- Edit Game paragraph -->
+                <h1>Edit Event</h1>
+
+                 {% csrf_token %}
+                {{ form }}
+
+                <!-- edit game button -->
+                <input class="button" type="submit" value="Edit Article">
+            </div>
+        </form>
+    </section>
+
+    </div>
+</div>
+{% endblock %}
