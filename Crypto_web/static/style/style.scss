@@ -76,6 +76,16 @@ body {
   font-family: 'Lato', sans-serif;
 
 }
+.parent{
+  text-align:center;
+}
+
+    #heading{
+     display:inline-block;
+     *display:inline;/* For IE7*/
+     *zoom:1;/* For IE7*/
+     text-align:left;
+    }
 p {
   text-align: center;
   margin: 20px 0 60px;
