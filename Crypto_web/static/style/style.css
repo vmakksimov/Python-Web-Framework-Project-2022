@@ -8,6 +8,16 @@ body {
 
 
 }
+.parent{
+  text-align:center;
+}
+
+    #heading{
+     display:inline-block;
+     *display:inline;/* For IE7*/
+     *zoom:1;/* For IE7*/
+     text-align:left;
+    }
 
 #game-details {
     position: relative;
