@@ -25,7 +25,7 @@ urlpatterns = [
                   path('news/', include('Crypto_web.news.urls')),
                   path('article/', include('Crypto_web.helparticle.urls')),
                   path('event/', include('Crypto_web.event.urls')),
-                    path('partners/', include('Crypto_web.partners.urls')),
+                  path('partners/', include('Crypto_web.partners.urls')),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
