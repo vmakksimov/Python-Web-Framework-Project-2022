@@ -50,6 +50,7 @@ PROJECT_APPS = (
     'Crypto_web.news',
     'Crypto_web.helparticle',
     'Crypto_web.event',
+    'Crypto_web.partners',
 )
 #
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
