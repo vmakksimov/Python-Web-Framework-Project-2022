@@ -1,6 +1,6 @@
 from django import forms
 from Crypto_web.common.helpers import BootstrapFormMixin
-from Crypto_web.helparticle.models import HelpArticle
+
 from Crypto_web.partners.models import Partners
 
 
@@ -22,13 +22,12 @@ class CreatePartnersForm(BootstrapFormMixin, forms.ModelForm):
         model = Partners
         fields = ('name', 'image',)
 
+class DeletePartnersForm(forms.ModelForm):
 
-#class DeletePartnersForm(forms.ModelForm):
+    def save(self, commit=True):
+        self.instance.delete()
+        return self.instance
 
-    #def save(self, commit=True):
-        #self.instance.delete()
-        #return self.instance
-
-    #class Meta:
-        #model = Partners
-        #fields = ()
+    class Meta:
+        model = Partners
+        fields = ()
