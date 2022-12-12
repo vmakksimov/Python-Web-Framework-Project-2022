@@ -22,7 +22,7 @@ class UserRegisterView(views.CreateView):
 
     def post(self, request, *args, **kwargs):
         # sending email for registration to the user asynchronous
-        send_email_to_new_user.delay(request.POST['email'])
+        #send_email_to_new_user.delay(request.POST['email'])
         # sending email for registration to the user synchronous
         #SESService().send_email(request.POST['email'])
         return super().post(request, *args, **kwargs)
