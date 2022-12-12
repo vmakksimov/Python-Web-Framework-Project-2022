@@ -8,6 +8,8 @@ from django.views import generic as views
 from Crypto_web.accounts.forms import ProfileForms, DeleteForm, EditProfileForm
 from Crypto_web.accounts.models import Profile
 from Crypto_web.common.helpers import calculate_total_balance
+from Crypto_web.services.ses import SESService
+from Crypto_web.accounts.tasks import send_email_to_new_user
 
 from Crypto_web.web.models import Coin, Deposit
 
@@ -17,6 +19,13 @@ class UserRegisterView(views.CreateView):
     form_class = ProfileForms
     template_name = 'accounts/profile_create.html'
     success_url = reverse_lazy('index')
+
+    def post(self, request, *args, **kwargs):
+        # sending email for registration to the user asynchronous
+        send_email_to_new_user.delay(request.POST['email'])
+        # sending email for registration to the user synchronous
+        #SESService().send_email(request.POST['email'])
+        return super().post(request, *args, **kwargs)
 
     def form_valid(self, form):
         result = super().form_valid(form)

@@ -154,6 +154,18 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = os.environ.get('AKIA3SBSR3XET363E5PQ')
+AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_SES_REGION_NAME = os.environ.get('eu-central-1')
+AWS_SES_REGION_ENDPOINT = os.environ.get('email.eu-central-1.amazonaws.com')
+
 AUTH_USER_MODEL = 'accounts.CryptoUser'
 
 
