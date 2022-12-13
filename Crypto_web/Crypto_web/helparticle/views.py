@@ -24,7 +24,7 @@ class CreateArticleView(views.CreateView):
 
 class HelpArticleView(views.ListView):
     model = HelpArticle
-    template_name = 'news/news.html'
+    template_name = 'helparticles/help_article.html'
     context_object_name = 'articles'
 
 
