@@ -50,7 +50,7 @@ class InboxView(views.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        a= 5
+
         messages = list(ContactUs.objects.filter(author_id=self.request.user.id))
         total_messages = len(messages)
 
