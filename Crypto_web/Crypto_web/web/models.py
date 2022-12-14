@@ -262,7 +262,6 @@ class ContactUs(models.Model):
     )
 
     author = models.ForeignKey(
-
       UserModel,
       on_delete=models.CASCADE,
       default=1,
