@@ -125,6 +125,9 @@ class EditProfileView(views.UpdateView):
         return kwargs
 
 
+class ChangeUserPasswordView(auth_views.PasswordChangeView):
+    template_name = 'accounts/change-password.html'
+
 
 
 

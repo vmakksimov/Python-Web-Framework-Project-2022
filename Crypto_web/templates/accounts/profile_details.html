@@ -36,12 +36,10 @@
 
             <div class="buttons">
                     <a href="{% url 'profile edit' profile.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'edit password' %}" class="btn btn-primary">Change Password</a>
                     <a href="{% url 'delete profile page' profile.pk %}" class="btn btn-danger">Delete</a>
                 </div>
-            {% if is_owner %}
-                  <a href="{% url 'profile edit' profile.pk %}" class="btn btn-primary">Edit</a>
-                  <a href="{% url 'delete profile page' profile.pk %}" class="btn btn-danger">Delete</a>
-                {% endif %}
+          
             </div>
         </div>
     </div>

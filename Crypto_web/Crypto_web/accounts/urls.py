@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path, reverse_lazy
+from django.views.generic import RedirectView
 
 from Crypto_web.accounts.views import UserRegisterView, UserLoginView, ProfileView, UserLogOutView, delete_profile, \
-    EditProfileView, BalanceAvailableView
+    EditProfileView, BalanceAvailableView, ChangeUserPasswordView
 
 urlpatterns = (
     path('register/', UserRegisterView.as_view(), name='create profile'),
@@ -14,6 +15,21 @@ urlpatterns = (
     path('profile/edit/<int:pk>/', EditProfileView.as_view(), name='profile edit'),
 
 
+    path('password-change/', ChangeUserPasswordView.as_view(), name='edit password'),
+    path('password_change_done', RedirectView.as_view(url=reverse_lazy('dashboard')), name='password_change_done')
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
 
 import Crypto_web.accounts.signals
