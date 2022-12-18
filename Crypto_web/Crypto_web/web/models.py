@@ -264,7 +264,7 @@ class ContactUs(models.Model):
       UserModel,
       on_delete=models.CASCADE,
       default=1,
-      db_constraint=False,
+
      )
 
     class Meta:
