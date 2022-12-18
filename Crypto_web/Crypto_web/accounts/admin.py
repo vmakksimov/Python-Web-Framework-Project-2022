@@ -17,15 +17,15 @@ from django.contrib.auth.models import Group
 
 # Register your models here.
 
-def apply_change(modeladmin, request, queryset):
-    for user in queryset:
-        if user.user.is_staff == False:
-            user.user.is_staff = True
-            user.user.save()
-            user.save()
+#def apply_change(modeladmin, request, queryset):
+    #for user in queryset:
+        #if user.user.is_staff == False:
+            #user.user.is_staff = True
+            #user.user.save()
+            #user.save()
 
 
-apply_change.short_description = 'Make Staff Member'
+#apply_change.short_description = 'Make Staff Member'
 
 
 @admin.register(CryptoUser)
@@ -47,7 +47,7 @@ class ProfileAdmin(admin.ModelAdmin):
     ordering = ('first_name',)
     search_fields = ('first_name',)
     list_per_page = 5
-    actions = [apply_change,]
+    #actions = [apply_change,]
 
 
 User = get_user_model()
