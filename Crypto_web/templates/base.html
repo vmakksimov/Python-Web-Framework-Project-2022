@@ -49,7 +49,7 @@
               </li>
 
 
-            {% if request.user.is_superuser %}
+            {% if request.user.is_superuser or request.user.is_staff %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Create
@@ -57,23 +57,15 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{% url 'create article' %}">Create Article</a></li>
                     <li><a class="dropdown-item" href="{% url 'create news' %}">Create News</a></li>
+                      {% if request.user.is_superuser %}
                     <li><a class="dropdown-item" href="{% url 'create event' %}">Create Event</a></li>
                       <li><a class="dropdown-item" href="{% url 'add partner' %}">Create Partner</a></li>
+                          {% endif %}
                   </ul>
                 </li>
             {% endif %}
 
-            {% if request.user.is_staff %}
-            <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Create
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'create article' %}">Create Article</a></li>
-                    <li><a class="dropdown-item" href="{% url 'create news' %}">Create News</a></li>
-                  </ul>
-                </li>
-            {% endif %}
+
 
                 {% if not request.user.is_authenticated %}
               <li class="nav-item">
