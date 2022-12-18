@@ -23,7 +23,7 @@
         <div id="heading">
         <img src="{{ partner.image }}" alt=""   />
 
-            {% if request.user.is_superuser or request.user.is_staff %}
+            {% if request.user.is_superuser %}
              <div class="buttons">
                 <a href="{% url 'delete partner' partner.pk %}" class="button">Delete</a>
             </div>
