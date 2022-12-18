@@ -13,7 +13,7 @@
 				<div class="row">
 					<!-- BEGIN INBOX MENU -->
 					<div class="col-md-3">
-						<h2 class="grid-title"><i class="fa fa-inbox"></i> Inboxxxx</h2>
+						<h2 class="grid-title"><i class="fa fa-inbox"></i> Inbox</h2>
 						<a class="btn btn-block btn-primary" data-toggle="modal" data-target="#compose-modal"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW MESSAGE</a>
 
 						<hr>
@@ -21,7 +21,7 @@
 						<div>
 							<ul class="nav nav-pills nav-stacked">
 
-								<li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox ({{ total_messages }})</a></li>
+								<li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox2 ({{ total_messages }})</a></li>
 
 
 
@@ -49,6 +49,9 @@
 						<div class="table-responsive">
 							<table class="table">
 								<tbody>
+                                {% if messages %}
+                                <h1>IMAAAAA</h1>
+                                {% else %}
                                 {% for el in messages %}
                                 <tr>
 
@@ -71,28 +74,14 @@
 
 
                                     </td>
+
 								</tr>
                                 {% endfor %}
 							</tbody></table>
+                        {% endif %}
 						</div>
 
-						 <div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-        {% endif %}
 
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-</div>
 					</div>
 					<!-- END INBOX CONTENT -->
 
