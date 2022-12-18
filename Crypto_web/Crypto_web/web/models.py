@@ -216,7 +216,6 @@ class Deposit(models.Model):
     )
 
 
-
     user = models.ForeignKey(
         UserModel,
         on_delete=models.CASCADE,

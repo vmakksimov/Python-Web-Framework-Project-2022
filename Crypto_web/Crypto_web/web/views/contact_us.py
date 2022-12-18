@@ -9,7 +9,7 @@ class CreateContactView(views.CreateView):
 
     form_class = CreateContactForm
     template_name = 'web/generic/contact.html'
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('message sent')
 
 
     def get_form_kwargs(self):
