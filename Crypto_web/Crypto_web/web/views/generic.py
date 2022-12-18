@@ -55,7 +55,7 @@ class InboxView(views.ListView):
         total_messages = len(messages)
 
         context.update({
-            'messages': messages,
+            'message': messages,
             'total_messages': total_messages,
 
 

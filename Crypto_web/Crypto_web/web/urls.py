@@ -21,7 +21,7 @@ urlpatterns = (
     path('about/', AboutView.as_view(), name='about'),
 
 
-    path('inbox/<int:pk>/', InboxView.as_view(), name='inbox'),
+    path('inbox/', InboxView.as_view(), name='inbox'),
     path('inbox/message/<int:pk>/', MessageView.as_view(), name='user message'),
     path('inbox/message-sent/', MessageSentView.as_view(), name='message sent'),
     path('inbox/message-delete/<int:pk>/', MessageDeleteView.as_view(), name='message delete'),
