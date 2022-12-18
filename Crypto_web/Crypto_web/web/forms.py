@@ -57,16 +57,19 @@ class CreateContactForm(BootstrapFormMixin, forms.ModelForm):
             'name': forms.Textarea(
                 attrs={
                     'placeholder': 'Input your name here',
+                    'rows': 1
 
                 }),
             'mobile_number': forms.Textarea(
                 attrs={
                     'placeholder': 'Input your phone number here',
+                    'rows': 1
 
                 }),
             'email': forms.Textarea(
                 attrs={
                     'placeholder': 'Input your email here',
+                    'rows': 1
 
                 })
         }
